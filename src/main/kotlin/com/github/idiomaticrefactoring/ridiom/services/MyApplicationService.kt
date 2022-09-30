@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.idiomaticrefactoring.ridiom.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.idiomaticrefactoring.ridiom.MyBundle
 
 class MyApplicationService {
 
