@@ -1,6 +1,6 @@
 # RIdiom Description
 
-Refactoring non-idiomatic Python code inot idiomatic code with Python idioms
+Refactoring non-idiomatic Python code into idiomatic code with Python idioms
 
 
 ## Installation
