@@ -7,7 +7,7 @@ Refactoring non-idiomatic Python code inot idiomatic code with Python idioms
 
 - Install RIdiom from Disk
   
-  Download RIdiom/build/distributions/RIdiom-1.0-SNAPSHOT.zip 
+  Download RIdiom-1.0-SNAPSHOT.zip 
   
 - Market:
 
