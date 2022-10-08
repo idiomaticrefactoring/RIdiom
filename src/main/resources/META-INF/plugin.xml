@@ -1,18 +1,58 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.idiomaticrefactoring.ridiom</id>
-    <name>RIdiom</name>
-    <vendor>idiomaticrefactoring</vendor>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.example.RIdiom</id>
 
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <!--    <name>Demo</name>-->
+    <name>RIdiom</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="826320663@qq.com" url="https://github.com/idiomaticrefactoring">RIdiom</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Refactoring non-idiomatic Python code into idiomatic Python code.<br>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
 
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.idiomaticrefactoring.ridiom.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.idiomaticrefactoring.ridiom.services.MyProjectService"/>
-    </extensions>
+        <!--        <toolWindow id="RefactorWindow" anchor="bottom" factoryClass="com.example.RIdiom.RefactorWindow"/>-->
+        <toolWindow canCloseContents="false" anchor="bottom"
+                    id="RefactorWindow"
+                    factoryClass="com.example.ridiom.RefactorWindow">
+        </toolWindow>
 
-    <applicationListeners>
-        <listener class="com.github.idiomaticrefactoring.ridiom.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    </extensions>
+    <actions>
+        <!--        <action id="com.example.refactoridiom.PopupDialogAction" class="com.example.refactoridiom.PopupDialogAction"-->
+        <!--                text="example_test_action_popupmenu">-->
+        <!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+        <!--        </action>-->
+        <!--        <action id="com.example.refactoridiom.SelectFileAction" class="com.example.refactoridiom.SelectFileAction"-->
+        <!--                text="RIdiom">-->
+        <!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>-->
+        <!--        </action>-->
+        <!--    <action id="com.example.RIdiom.SelectFileRefactorAction"-->
+        <!--            class="com.example.RIdiom.SelectFileRefactorAction" text="RIdiom">-->
+        <!--        <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>-->
+        <!--    </action>-->
+        <action id="com.example.RIdiom.SelectFileRefactorAction" class="com.example.ridiom.SelectFileRefactorAction"
+                text="RIdiom">
+            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>
+        </action>
+        <action id="com.example.RIdiom.RefactorPreviewAction" class="com.example.ridiom.RefactorPreviewAction"
+                text="consoleview">
+            <add-to-group group-id="ConsoleView.PopupMenu" anchor="first"/>
+        </action>
+    </actions>
+
 </idea-plugin>
