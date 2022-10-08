@@ -1,39 +1,38 @@
-# RIdiom
+# RIdiom Description
 
-![Build](https://github.com/idiomaticrefactoring/RIdiom/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+Refactoring non-idiomatic Python code inot idiomatic code with Python idioms
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Verify the [pluginGroup](./gradle.properties), [plugin ID](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the Plugin ID in the above README badges.
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
-
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
-
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
 
 ## Installation
 
-- Using IDE built-in plugin system:
+- Install RIdiom from Disk
   
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "RIdiom"</kbd> >
-  <kbd>Install Plugin</kbd>
+  Download RIdiom/build/distributions/RIdiom-1.0-SNAPSHOT.zip 
   
-- Manually:
+- Market:
 
-  Download the [latest release](https://github.com/idiomaticrefactoring/RIdiom/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
+## Python Package: 
 
+We develop a python package, you could install the package from https://pypi.org/project/RefactoringIdioms/
+
+## Web application:
+
+We also develop a web application for the code refactoring, you could access the application through the url: 47.242.131.128:5000
+
+Each time, you could click code area to refresh.
+
+
+## How to cite RefactoringMiner
+If you are using RIdiom in your research, please cite the following paper:
+
+Zejun Zhang, Zhenchang Xing, Xin Xia, Xiwei Xu, and Liming Zhu, “Making python code idiomatic by automatic refactoring non-idiomatic python code with pythonic idioms,” arXiv preprint arXiv:2207.05613, 2022
+
+@article{zhang2022making,
+  title={Making Python Code Idiomatic by Automatic Refactoring Non-Idiomatic Python Code with Pythonic Idioms},
+  author={Zhang, Zejun and Xing, Zhenchang and Xia, Xin and Xu, Xiwei and Zhu, Liming},
+  journal={arXiv preprint arXiv:2207.05613},
+  year={2022}
+}
 
 ---
 Plugin based on the [IntelliJ Platform Plugin Template][template].
