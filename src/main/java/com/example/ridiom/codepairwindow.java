@@ -14,6 +14,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.ui.JBColor;
 
+import java.io.File;
+import java.util.List;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -22,7 +25,6 @@ import java.awt.event.MouseEvent;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
 https://docs.oracle.com/javase/tutorial/uiswing/components/table.html
@@ -35,7 +37,7 @@ public class codepairwindow {
     private JButton refactorButton;
     private JToolBar toolbar;
     private JScrollPane scrollpane;
-    private ArrayList<ArrayList<String>> codepairs;
+    private List<List<String>> codepairs;
 //    private int count_remove=0;//=0;
     private ArrayList<Integer> remove_index_list;// = new ArrayList<Integer>();
     //private ArrayList remove_index_list;//#=new ArrayList();
@@ -57,13 +59,14 @@ public class codepairwindow {
 
 
     }
-    public codepairwindow(ToolWindow toolWindow, ArrayList<ArrayList<String>> codepairs, Project project,String filepath,String idiom) {
+    public codepairwindow(ToolWindow toolWindow, List<List<String>> codepairs, Project project,String filepath,String idiom) {
         this.codepairs=codepairs;
         this.remove_index_list=new ArrayList<Integer>();
+
         //this.count_remove=0;
 
 //        this.panel1=new JPanel();
-        cancelButton.addActionListener(e -> {toolWindow.getContentManager().removeAllContents(true);});//toolWindow.remove();
+        cancelButton.addActionListener(e -> { RefactorMethodRuntime.delete_json_files(filepath);  toolWindow.getContentManager().removeAllContents(true);});//toolWindow.remove();
 //        this.createUIComponents();
         refactorButton.addActionListener(e -> {toolWindow.hide();
             //System.out.println("all remove row index: "+remove_index_list);
@@ -73,7 +76,9 @@ public class codepairwindow {
 
             //System.out.println("code pairs of refactor button : "+codepairs);
 
-            RefactorMethod.refactor_by_codepairs(filepath,idiom,remove_index_list);
+            //RefactorMethod.refactor_by_codepairs(filepath,idiom,remove_index_list);
+            RefactorMethodRuntime.refactor_by_codepairs(filepath,idiom,remove_index_list);
+
             toolWindow.getContentManager().removeAllContents(true);
         });
         removeButton.addActionListener(e->{
@@ -226,7 +231,7 @@ public class codepairwindow {
             }
 
         }else {
-            stringArray = new String[][]{{"Idiom1", "FilePath", "Non-idiomatic Code", "Idiomatic Code","Line Numbers"}};
+            //stringArray = new String[][]{{"Idiom1", "FilePath", "Non-idiomatic Code", "Idiomatic Code","Line Numbers"}};
         }
 //        for(int i=0;i<stringArray.length;i++){
 //            stringArray[i][2]="<html><p>"+stringArray[i][2]+"</p></html>";

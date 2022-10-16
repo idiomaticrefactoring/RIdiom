@@ -24,6 +24,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Action class to demonstrate how to interact with the IntelliJ Platform.
@@ -37,8 +38,11 @@ public class SelectFileRefactorAction extends AnAction {
     public static void preview_code_pairs(String filepath,ToolWindow toolwind,ComboBox modifierCombobox,JBPopup popup,Project project){
         popup.dispose();
         String new_idiom = modifierCombobox.getSelectedItem().toString();
-        ArrayList<ArrayList<String>> codepairs  = (ArrayList<ArrayList<String>>) RefactorMethod.getCodePairs(filepath, new_idiom);
+//        ArrayList<ArrayList<String>> codepairs  = (ArrayList<ArrayList<String>>) RefactorMethod.getCodePairs(filepath, new_idiom);
+       // ArrayList<ArrayList<String>> codepairs  = (ArrayList<ArrayList<String>>) RefactorMethodRuntime.getCodePairs(filepath, new_idiom);
+        List<List<String>> codepairs  =  RefactorMethodRuntime.getCodePairs(filepath, new_idiom);
 
+        //ArrayList<ArrayList<String>> codepairs  =null;
 //                String item_idiom=modifierCombobox.getItem().toString();
 //                System.out.println(">>>>select idiom: "+idiom);
 //                System.out.println(">>>>non select idiom: "+modifierCombobox.getSelectedItem().toString());
@@ -155,12 +159,13 @@ public class SelectFileRefactorAction extends AnAction {
             a.setMovable(true);
             a.setTitle("Refactor " + last_filename);
             popup.showInFocusCenter();
-            cancelbutt.addActionListener( e->popup.dispose());
+            cancelbutt.addActionListener( e->{popup.dispose();RefactorMethodRuntime.delete_json_files(filepath);});
 
             String idiom = modifierCombobox.getSelectedItem().toString();
             //System.out.println(">>>>path: "+filepath+idiom);
 
-            refactorbutt.addActionListener( e->{RefactorMethod.refactor(filepath,idiom);popup.dispose();});
+//            refactorbutt.addActionListener( e->{RefactorMethod.refactor(filepath,idiom);popup.dispose();});
+            refactorbutt.addActionListener( e->{RefactorMethodRuntime.refactor(filepath,idiom);popup.dispose();});
 
             //customFileRefactorAction filecustomrefac = new customFileRefactorAction(popup);
 

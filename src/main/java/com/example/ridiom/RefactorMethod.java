@@ -3,6 +3,7 @@ package com.example.ridiom;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
+
 import jep.Interpreter;
 import jep.JepConfig;
 import jep.MainInterpreter;
@@ -100,18 +101,18 @@ public class RefactorMethod {
 
     }
     public static String get_jep_path(){
-        URL res = RefactorMethod.class.getResource("RefactorMethod.class");
+        //URL res = RefactorMethod.class.getResource("RefactorMethod.class");
         //System.out.println("jep_path"+res.getPath());
-        String class_path = res.getPath();
-        String pattern = Pattern.quote(System.getProperty("file.separator"));
-        String[] splittedFileName = class_path.split(pattern);
-        String dir_jep = String.join("/", Arrays.asList(splittedFileName).subList(0, 5));
-        //System.out.println("dir_jep"+dir_jep);
-        String jep_path=dir_jep+"/jep/libjep.jnilib";
+//        String class_path = res.getPath();
+//        String pattern = Pattern.quote(System.getProperty("file.separator"));
+//        String[] splittedFileName = class_path.split(pattern);
+//        String dir_jep = String.join("/", Arrays.asList(splittedFileName).subList(0, 5));
+//        //System.out.println("dir_jep"+dir_jep);
+//        String jep_path=dir_jep+"/jep/libjep.jnilib";
         //System.out.println("jep_path abosulute"+jep_path.substring(5));
         PluginId pluginId = PluginId.getId("com.example.RIdiom");
         IdeaPluginDescriptor plugin = PluginManager.getPlugin(pluginId);
-        jep_path= String.valueOf(plugin.getPluginPath());
+        String jep_path= String.valueOf(plugin.getPluginPath());
         //System.out.println("jep_path abosulute plugin_path"+jep_path.substring(5));
 
 //        jep_path=jep_path.substring(5);
@@ -137,6 +138,7 @@ public class RefactorMethod {
     }
     public static Object getCodePairs(String filepath,String idiom){
 //        String sp1 = this.getClass().getResource("").getPath();
+        System.out.print("come in the method getCodePairs: ");
 
 
         //"/opt/homebrew/lib/python3.9/site-packages/jep/libjep.jnilib";//dir_jep+"/jep/libjep.jnilib";
@@ -176,18 +178,22 @@ public class RefactorMethod {
         subInterp.eval("import main");
         try {
         // run each function from the .py doc I
+
         String command="res_spacy = main.jave_get_code_pairs('"+filepath+"','"+idiom+"')";
+        //String command="res_spacy = main.jave_get_code_pairs_parallel('"+filepath+"','"+idiom+"')";
+
             //System.out.println(command);
         subInterp.eval(command);
 
         Object codepairs= subInterp.getValue("res_spacy");
-            //System.out.print("codepairs: "+codepairs);
+//        System.out.print("codepairs: "+codepairs);
         subInterp.close();
         return codepairs;
         }
         catch (Exception e){
             subInterp.close();
             System.out.println("catch the exception"+e.toString());
+            //System.out.print("codepairs: "+codepairs);
             return null;
         }
 

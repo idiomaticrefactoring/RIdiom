@@ -4,13 +4,14 @@ plugins {
 }
 
 group = "com.example"
-version = "1.0-SNAPSHOT"
+version = "3.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
 }
 dependencies {
     implementation("black.ninia:jep:4.0.3")
+    implementation("com.alibaba:fastjson:2.0.15")
 }
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
