@@ -24,7 +24,7 @@ We also develop a web application for the code refactoring, you could access the
 Each time, you could click code area to refresh.
 
 
-## How to cite RefactoringMiner
+## How to cite
 If you are using RIdiom in your research, please cite the following paper:
 
 Zejun Zhang, Zhenchang Xing, Xin Xia, Xiwei Xu, and Liming Zhu, “Making python code idiomatic by automatic refactoring non-idiomatic python code with pythonic idioms,” arXiv preprint arXiv:2207.05613, 2022
