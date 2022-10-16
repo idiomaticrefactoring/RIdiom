@@ -15,7 +15,7 @@ Refactoring non-idiomatic Python code into idiomatic code with Python idioms
 
 ## Python Package: 
 
-We develop a python package, you could install the package from https://pypi.org/project/RefactoringIdioms/
+We develop a Python package, you could install the package from https://pypi.org/project/RefactoringIdioms/
 
 ## Web application:
 
