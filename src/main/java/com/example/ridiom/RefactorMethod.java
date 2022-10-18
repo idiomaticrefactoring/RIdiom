@@ -179,7 +179,7 @@ public class RefactorMethod {
         try {
         // run each function from the .py doc I
 
-        String command="res_spacy = main.jave_get_code_pairs('"+filepath+"','"+idiom+"')";
+        String command="res_spacy = main.jave_get_code_pairs_parallel('"+filepath+"','"+idiom+"')";
         //String command="res_spacy = main.jave_get_code_pairs_parallel('"+filepath+"','"+idiom+"')";
 
             //System.out.println(command);

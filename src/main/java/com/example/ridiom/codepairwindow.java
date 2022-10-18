@@ -66,9 +66,12 @@ public class codepairwindow {
         //this.count_remove=0;
 
 //        this.panel1=new JPanel();
-        cancelButton.addActionListener(e -> { RefactorMethodRuntime.delete_json_files(filepath);  toolWindow.getContentManager().removeAllContents(true);});//toolWindow.remove();
+        cancelButton.addActionListener(e -> {
+            //RefactorMethodRuntime.delete_json_files(filepath);
+            RefactorMethodPython.delete_json_files(filepath);
+            toolWindow.getContentManager().removeAllContents(true);});//toolWindow.remove();
 //        this.createUIComponents();
-        refactorButton.addActionListener(e -> {toolWindow.hide();
+        refactorButton.addActionListener(e -> {
             //System.out.println("all remove row index: "+remove_index_list);
             //System.out.println("idiom : "+idiom);
             //System.out.println("filepath : "+filepath);
@@ -77,9 +80,11 @@ public class codepairwindow {
             //System.out.println("code pairs of refactor button : "+codepairs);
 
             //RefactorMethod.refactor_by_codepairs(filepath,idiom,remove_index_list);
-            RefactorMethodRuntime.refactor_by_codepairs(filepath,idiom,remove_index_list);
+//            RefactorMethodRuntime.refactor_by_codepairs(filepath,idiom,remove_index_list);
+            RefactorMethodPython.refactor_by_codepairs(filepath,idiom,remove_index_list);
 
-            toolWindow.getContentManager().removeAllContents(true);
+            toolWindow.getContentManager().removeAllContents(false);
+            //toolWindow.hide();
         });
         removeButton.addActionListener(e->{
             //JTable row_content = (JTable)e.getSource();

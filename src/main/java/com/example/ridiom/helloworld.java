@@ -9,7 +9,7 @@ public class helloworld
 {
     public static void refactor(String filepath,String idiom){
         MainInterpreter.setJepLibraryPath("/opt/homebrew/lib/python3.9/site-packages/jep/libjep.jnilib");
-
+//        PythonInterpreter interpreter = new PythonInterpreter();
         // set path for python docs with python script to run
         jep.JepConfig jepConf = new JepConfig();
         //jepConf.addIncludePaths(System.getProperty("user.dir")+"/src/main/java/");
@@ -71,10 +71,12 @@ public class helloworld
         return codepairs;
     }
     public static void main(String[] args) {
-        String filepath="/Users/zhangzejunzhangzejun/PycharmProjects/code_test_java_plugin/bjst.py";
-        String idiom="All";
-        //refactor(filepath,idiom);
-        getCodePairs(filepath, idiom);
+        String var1 = System.getenv("PYTHONPATH");
+        System.out.print(var1);
+//        String filepath="/Users/zhangzejunzhangzejun/PycharmProjects/code_test_java_plugin/bjst.py";
+//        String idiom="All";
+//        //refactor(filepath,idiom);
+//        getCodePairs(filepath, idiom);
 //        ArrayList<ArrayList<String>> codepairs  = (ArrayList<ArrayList<String>>) RefactorMethod.getCodePairs(filepath, idiom);
 
         /*

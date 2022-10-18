@@ -45,14 +45,21 @@
         <!--            class="com.example.RIdiom.SelectFileRefactorAction" text="RIdiom">-->
         <!--        <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>-->
         <!--    </action>-->
+        <group id="com.example.RIdiom" text="RIdiom" description="a" popup="true">
         <action id="com.example.RIdiom.SelectFileRefactorAction" class="com.example.ridiom.SelectFileRefactorAction"
                 text="RIdiom">
-            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>
+<!--            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>-->
         </action>
+            <separator/>
+            <action id="com.example.ridiom.SetInterpreter" class="com.example.ridiom.SetInterpreter" text="Interpreter Setting">
+            </action>
+            <add-to-group group-id="ProjectViewPopupMenuRefactoringGroup" anchor="first"/>
+        </group>
         <action id="com.example.RIdiom.RefactorPreviewAction" class="com.example.ridiom.RefactorPreviewAction"
                 text="consoleview">
             <add-to-group group-id="ConsoleView.PopupMenu" anchor="first"/>
         </action>
+
     </actions>
 
 </idea-plugin>
