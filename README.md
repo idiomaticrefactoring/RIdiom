@@ -18,7 +18,7 @@ Refactoring non-idiomatic Python code into idiomatic code with Python idioms
 
   ### You can refer to the video to learn how to use the tool [Video URL](https://youtu.be/45GRKGBSoD4)
 
-  1. After the successful installation, we right-click a folder or a file you want to refactor and then click RIdiom in the menu bar.
+  1. After the successful installation, we right-click a folder or a file you want to refactor and then select RIdiom in the menu bar.
 
   2. We first need to set the python compiler, its version must be above 3.9. We also need to install two packages: sympy and pathos.
   
