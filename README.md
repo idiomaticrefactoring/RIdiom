@@ -20,7 +20,11 @@ Refactoring non-idiomatic Python code into idiomatic code with Python idioms
 
   1. After the successful installation, we right-click a folder or a file you want to refactor and then select RIdiom in the menu bar.
 
-  2. We first need to set the python compiler, its version must be above 3.9. We also need to install two packages: sympy and pathos.
+  2. We first need to set the python compiler, its version must be above 3.9. We also need to install two packages: sympy and pathos.  
+    **Command to Install Packages:**  
+    ```path_of_python_interpreter -m pip install package_name```  
+    **for example**  
+    ```/opt/homebrew/bin/python3 -m pip install sympy```
   
   3. Then we click RIdiom and the preview button to show details of all refactorable code snippets with selected Python idioms. We could click the row of a code pair to navigate to the specified file location. If we don’t want to refactor some non-idiomatic code fragments, we could select them and then click the remove button. 
   
