@@ -58,3 +58,5 @@ Zejun Zhang, Zhenchang Xing, Xin Xia, Xiwei Xu, and Liming Zhu, “Making python
 Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 [template]: https://github.com/JetBrains/intellij-platform-plugin-template
+
+https://github.com/guodongxiaren/README/blob/master/README.md
