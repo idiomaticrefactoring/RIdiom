@@ -16,7 +16,7 @@ Refactoring non-idiomatic Python code into idiomatic code with Python idioms
   
 ## Usage
 
-  ### You can refer to the video to learn how to use the tool [Video URL](https://youtu.be/45GRKGBSoD4)
+  ### You can refer to the video to learn how to use the tool [Video URL](https://youtu.be/KG-nXGR8DIA)
 
   1. After the successful installation, we right-click a folder or a file you want to refactor and then select RIdiom in the menu bar.
 
